@@ -25,4 +25,10 @@ public class MascotaController {
         return mascotaSaved;
     }
 
+    @GetMapping("/search")
+    public List<Mascota> findByName(@RequestParam("nombre") String name) {
+        return this.mascotaRepository.findByNombre(name);
+    }
+
+
 }
