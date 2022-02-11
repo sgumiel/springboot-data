@@ -30,5 +30,10 @@ public class MascotaController {
         return this.mascotaRepository.findByNombre(name);
     }
 
+    @GetMapping("/perro")
+    public List<Mascota> findAllPerro(){
+        return this.mascotaRepository.findAllPerros();
+    }
+
 
 }
