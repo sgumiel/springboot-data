@@ -25,7 +25,7 @@ public class MascotaController {
         return mascotaSaved;
     }
 
-    @GetMapping("/search")
+    @GetMapping(value = "/search", params = "nombre")
     public List<Mascota> findByName(@RequestParam("nombre") String name) {
         return this.mascotaRepository.findByNombre(name);
     }
@@ -34,6 +34,12 @@ public class MascotaController {
     public List<Mascota> findAllPerro(){
         return this.mascotaRepository.findAllPerros();
     }
+
+    @GetMapping(value = "/search", params = "raza")
+    public List<Mascota> findAllByRaza(@RequestParam(value = "raza") String raza) {
+        return this.mascotaRepository.findAllByRaza(raza);
+    }
+
 
 
 }
